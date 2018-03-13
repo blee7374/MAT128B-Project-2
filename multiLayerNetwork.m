@@ -1,14 +1,17 @@
-function [outputArg1,outputArg2] = multiLayerNetwork(inputArg1,inputArg2)
+function [OUT] = multiLayerNetwork(input,W)
 %UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here
 
-%take inputs
-input = [1, 2, 3, 4, 5];
+% take input row vector in the form below
+% input = [1, 2, 3, 4, 5];
 
+%preallocating OUT matrix
+OUT = ones(1,length(W));
 
+% iterate through column vectors of W
+for i=1 : length(W)
 
-
-outputArg1 = inputArg1;
-outputArg2 = inputArg2;
+    OUT(i) = neuron(input, W(:,i));
+    
 end
 
