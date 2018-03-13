@@ -1,4 +1,4 @@
-function [OUT] = multiLayerNetwork(input,W)
+function [OUT] = multiLayerNetwork(input,W,bias)
 %UNTITLED2 Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -6,12 +6,12 @@ function [OUT] = multiLayerNetwork(input,W)
 % input = [1, 2, 3, 4, 5];
 
 %preallocating OUT matrix
-OUT = ones(1,length(W));
+OUT = ones(1,size(W,2));
 
 % iterate through column vectors of W
-for i=1 : length(W)
+for i=1 : size(W,2)
 
-    OUT(i) = neuron(input, W(:,i));
+    OUT(i) = neuron(input, W(:,i),bias);
     
 end
 

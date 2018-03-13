@@ -1,4 +1,4 @@
-function [OUT] = neuron(input,w)
+function [OUT] = neuron(input,w,bias)
 % This function takes in:
 % input row vector, and
 % weight column vector (from weight matrix)
@@ -10,6 +10,8 @@ function [OUT] = neuron(input,w)
 
 % compute sungle value NET
 NET = input*w;
+
+NET = NET + bias;
 
 % run through function
 OUT = 1/(1+exp(-NET));
